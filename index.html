@@ -402,12 +402,25 @@
     <!-- INTRO -->
     <div class="intro" style="margin-top:16px;">
       <p>Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
+      <div id="nama-tamu-box" style="display:none; margin:12px auto; max-width:420px; background:var(--blue-mist); border:0.8px solid var(--blue-pale); border-radius:4px; padding:10px 16px; text-align:center;">
+        <span style="font-size:0.68rem;letter-spacing:2px;color:var(--text-muted);text-transform:uppercase;">Kepada Yth.</span><br>
+        <span id="nama-tamu" style="font-size:1rem;font-weight:700;color:var(--text-dark);"></span>
+      </div>
       <p style="margin-top:8px;">
         Dengan penuh rasa syukur kehadirat Allah Subhanahu Wa Ta'ala,<br>
         kami mengundang Bapak/Ibu/Saudara/i untuk hadir<br>
         dalam acara tasmiyah dan aqiqah anak kedua kami:
       </p>
     </div>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const tamu = params.get('tamu');
+      if (tamu) {
+        document.getElementById('nama-tamu').textContent = decodeURIComponent(tamu);
+        document.getElementById('nama-tamu-box').style.display = 'block';
+      }
+    </script>
 
     <!-- BABY NAME BOX -->
     <div class="name-box">
